@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sammy's Mobile Hair services — styling, braiding, treatments and special occasion hair. Bring a reference photo and Sammy will recreate the look.">
+    <title>Services | Sammy's Mobile Hair</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --plum: #2a0f1c;
+            --plum-soft: #4a1e33;
+            --gold: #c9a227;
+            --gold-soft: #e6c65c;
+            --cream: #faf6f0;
+            --text: #2b1c22;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: 0.5px; }
+
+        header {
+            background: linear-gradient(180deg, #1c0913 0%, #2a0f1c 100%);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px 25px;
+            border-bottom: 2px solid var(--gold);
+        }
+        header img {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 25px rgba(201,162,39,0.35);
+        }
+        header h1 {
+            color: var(--gold-soft);
+            font-size: 2.4em;
+            margin-top: 12px;
+            font-weight: 700;
+        }
+        header p {
+            color: #e8d9c5;
+            font-style: italic;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        nav a {
+            color: #f3e5d1;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            margin: 0 14px;
+            padding: 8px 4px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        nav a::after {
+            content: ""; position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1px; background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        nav a:hover { color: var(--gold-soft); }
+        nav a:hover::after { transform: scaleX(1); }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+        main > h2 {
+            text-align: center;
+            color: var(--plum);
+            font-size: 2.4em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7a5a68;
+            font-style: italic;
+            margin-bottom: 45px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #eadbc8;
+            box-shadow: 0 4px 18px rgba(42,15,28,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--gold));
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(42,15,28,0.14);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0e2d0;
+        }
+        .card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content h3 {
+            color: var(--plum);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .card-content p {
+            color: #5a4650;
+            font-size: 0.92em;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-top: 1px solid #f0e2d0;
+            border-bottom: 1px solid #f0e2d0;
+            margin-bottom: 16px;
+            font-size: 0.85em;
+        }
+        .duration {
+            color: var(--plum-soft);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .duration::before {
+            content: "⏱ ";
+            color: var(--gold);
+        }
+        .price {
+            color: var(--gold);
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25em;
+        }
+        .card button {
+            background: var(--plum);
+            color: var(--gold-soft);
+            border: 1px solid var(--gold);
+            padding: 12px 16px;
+            border-radius: 0;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.78em;
+            transition: all 0.3s;
+        }
+        .card button:hover {
+            background: var(--gold);
+            color: var(--plum);
+        }
+
+        .note {
+            max-width: 720px;
+            margin: 55px auto 0;
+            text-align: center;
+            padding: 30px 25px;
+            background: linear-gradient(135deg, #fdf6ec, #f7e7ef);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+        }
+        .note h3 {
+            color: var(--plum);
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .note p { color: #5a4650; font-size: 0.95em; }
+        .note p span { color: var(--plum-soft); font-weight: 600; }
+
+        footer {
+            background: linear-gradient(180deg, #2a0f1c, #1c0913);
+            color: #d7c5b0;
+            text-align: center;
+            padding: 28px 20px;
+            margin-top: 55px;
+            font-size: 0.85em;
+            letter-spacing: 1.5px;
+            border-top: 2px solid var(--gold);
+        }
+        footer p span { color: var(--gold-soft); }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="Screenshot 2026-09-15 091352.png" alt="Sammy's Mobile Hair Logo">
+    <h1>Sammys mobile hair</h1>
+    <p>Crafted With Care · Delivered With Style</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Book</a>
+        <a href="pay.html">Pay</a>
+    </nav>
+</header>
+
+<main>
+    <h2>The Service Menu</h2>
+    <p class="subtitle">Every appointment includes a personal consultation and premium products.</p>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="OIP (2).webp" alt="Hair styling service">
+            <div class="card-content">
+                <h3>Hair Styling</h3>
+                <p>Blow-dries, curls, waves and sleek finishes — tailored to your look, whether everyday or elegant.</p>
+                <div class="meta">
+                    <span class="duration">1 – 2 hours</span>
+                    <span class="price">From R200</span>
+                </div>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="OIP (1).webp" alt="Braiding service">
+            <div class="card-content">
+                <h3>Braiding</h3>
+                <p>Neat, long-lasting braids — box braids, knotless, cornrows, twists and more, styled to your preference.</p>
+                <div class="meta">
+                    <span class="duration">3 – 6 hours</span>
+                    <span class="price">From R250</span>
+                </div>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="OIP (3).webp" alt="Hair treatment service">
+            <div class="card-content">
+                <h3>Hair Treatments</h3>
+                <p>Deep conditioning, repair and nourishing treatments to restore shine, strength and softness.</p>
+                <div class="meta">
+                    <span class="duration">45 mins – 1½ hours</span>
+                    <span class="price">From R180</span>
+                </div>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="OIP (4).webp" alt="Special occasion styling">
+            <div class="card-content">
+                <h3>Special Occasion Styling</h3>
+                <p>Weddings, matric dances, birthdays and events — a show-stopping look designed around you.</p>
+                <div class="meta">
+                    <span class="duration">2 – 4 hours</span>
+                    <span class="price">From R350</span>
+                </div>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="download (2).webp" alt="we also do frontal instulations">
+            <div class="card-content">
+                <h3>frontal instulations </h3>
+                <p>  a lovely instulationswith with no hasil        </p>
+                <div class="meta">
+                    <span class="duration">1hr</span>
+                    <span class="price">from R150</span>
+                </div>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+        </div>
+  <div class="card">
+            <img src="OIP.webp" alt="Custom style from reference photo">
+            <div class="card-content">
+                <h3>Custom Style (From Photo)</h3>
+                <p>Seen a look you love? Send Sammy the reference photo and she'll recreate it to suit your hair.</p>
+                <div class="meta">
+                    <span class="duration">Varies by style</span>
+                    <span class="price">Quoted on request</span>
+                </div>
+                <button onclick="window.location.href='contact.html'">Book Now</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="note">
+        <h3>✧ Please Bring A Reference Photo ✧</h3>
+        <p>we do <span>not</span> offer haircuts — but almost any other style is possible. To make sure you get exactly what you're dreaming of, please have a <span>reference photo ready</span> when you book. It helps us match the style, length, and finish perfectly.</p>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 <span>Sammy's Mobile Hair</span>. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

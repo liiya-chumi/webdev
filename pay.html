@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pay for your Sammy's Mobile Hair appointment securely. EFT, SnapScan and cash accepted.">
+    <title>Payment | Sammy's Mobile Hair</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --plum: #2a0f1c;
+            --plum-soft: #4a1e33;
+            --gold: #c9a227;
+            --gold-soft: #e6c65c;
+            --cream: #faf6f0;
+            --text: #2b1c22;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: 0.5px; }
+
+        header {
+            background: linear-gradient(180deg, #1c0913 0%, #2a0f1c 100%);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px 25px;
+            border-bottom: 2px solid var(--gold);
+        }
+        header img {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 25px rgba(201,162,39,0.35);
+        }
+        header h1 {
+            color: var(--gold-soft);
+            font-size: 2.4em;
+            margin-top: 12px;
+            font-weight: 700;
+        }
+        header p {
+            color: #e8d9c5;
+            font-style: italic;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+        nav { margin-top: 10px; }
+        nav a {
+            color: #f3e5d1;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            margin: 0 14px;
+            padding: 8px 4px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        nav a::after {
+            content: ""; position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1px; background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        nav a:hover { color: var(--gold-soft); }
+        nav a:hover::after { transform: scaleX(1); }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+        main > h2 {
+            text-align: center;
+            color: var(--plum);
+            font-size: 2.4em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7a5a68;
+            font-style: italic;
+            margin-bottom: 45px;
+            letter-spacing: 1px;
+        }
+
+        .payment-box {
+            background: #fff;
+            padding: 35px 30px;
+            border-radius: 4px;
+            border: 1px solid #eadbc8;
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 4px 18px rgba(42,15,28,0.06);
+            margin-bottom: 30px;
+        }
+        .payment-box h3 {
+            color: var(--plum);
+            font-size: 1.5em;
+            margin-bottom: 18px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 14px;
+        }
+        .payment-box h3::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        .method {
+            background: #fdfaf5;
+            border: 1px solid #f0e2d0;
+            border-left: 3px solid var(--gold);
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            border-radius: 3px;
+        }
+        .method h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: var(--plum);
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .method p {
+            font-size: 0.92em;
+            color: #5a4650;
+            margin-bottom: 4px;
+        }
+        .method p strong {
+            color: var(--plum-soft);
+            letter-spacing: 0.5px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: var(--plum-soft);
+            margin-bottom: 6px;
+            margin-top: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.78em;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #e0cfc0;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 0.95em;
+            background: #fdfaf5;
+            color: var(--text);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201,162,39,0.15);
+            background: #fff;
+        }
+        button[type="submit"] {
+            margin-top: 25px;
+            background: var(--plum);
+            color: var(--gold-soft);
+            border: 1px solid var(--gold);
+            padding: 14px 24px;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        button[type="submit"]:hover {
+            background: var(--gold);
+            color: var(--plum);
+            letter-spacing: 4px;
+        }
+
+        .note {
+            max-width: 720px;
+            margin: 35px auto 0;
+            text-align: center;
+            padding: 25px 25px;
+            background: linear-gradient(135deg, #fdf6ec, #f7e7ef);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+        }
+        .note p { color: #5a4650; font-size: 0.95em; }
+        .note p span { color: var(--plum-soft); font-weight: 600; }
+
+        footer {
+            background: linear-gradient(180deg, #2a0f1c, #1c0913);
+            color: #d7c5b0;
+            text-align: center;
+            padding: 28px 20px;
+            margin-top: 55px;
+            font-size: 0.85em;
+            letter-spacing: 1.5px;
+            border-top: 2px solid var(--gold);
+        }
+        footer p span { color: var(--gold-soft); }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.9em; }
+            main > h2 { font-size: 1.9em; }
+            .payment-box { padding: 25px 20px; }
+            nav a { display: inline-block; margin: 6px 8px; font-size: 0.75em; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="Screenshot 2026-09-15 091352.png" alt="Sammy's Mobile Hair Logo">
+    <h1>Sammys mobile hair</h1>
+    <p>Secure · Simple · Convenient</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Book</a>
+        <a href="payment.html">Pay</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Make A Payment</h2>
+    <p class="subtitle">Pay for your appointment or shop order below.</p>
+
+    <div class="payment-box">
+        <h3>Payment Methods</h3>
+
+        <div class="method">
+            <h4> EFT / Bank Transfer</h4>
+            <p><strong>Bank:</strong> FNB</p>
+            <p><strong>Account Name:</strong> S. Mahlangeni</p>
+            <p><strong>Account Number:</strong> 630 123 4567</p>
+            <p><strong>Branch Code:</strong> 250655</p>
+            <p><strong>Reference:</strong> Your full name + appointment date</p>
+        </div>
+
+        <div class="method">
+            <h4> SnapScan / Zapper</h4>
+            <p>Scan the QR code Sammy sends you after booking, or request a payment link via WhatsApp.</p>
+        </div>
+
+        <div class="method">
+            <h4>Cash On Arrival</h4>
+            <p> Cash is accepted on the day of your appointment. Please have the exact amount ready.</p>
+        </div>
+
+        <div class="method">
+            <h4> PayFast (Card / Instant EFT)</h4>
+            <p>Request a secure PayFast link by email or WhatsApp and pay with your card or instant EFT.</p>
+        </div>
+    </div>
+
+    <div class="payment-box">
+        <h3>Notify Sammy Of Your Payment</h3>
+        <form action="mailto:samanthamahlangeni@gmail.com" method="post" enctype="text/plain">
+            <label for="pay-name">Full Name</label>
+            <input type="text" id="pay-name" name="name" placeholder="Your full name" required>
+
+            <label for="pay-email">Email</label>
+            <input type="email" id="pay-email" name="email" placeholder="you@example.com" required>
+
+            <label for="pay-phone">Phone Number</label>
+            <input type="tel" id="pay-phone" name="phone" placeholder="000 000 0000" required>
+
+            <label for="pay-amount">Amount Paid (R)</label>
+            <input type="number" id="pay-amount" name="amount" placeholder="e.g. 250" min="0" step="10" required>
+
+            <label for="pay-method">Payment Method Used</label>
+            <select id="pay-method" name="method" required>
+                <option value="">-- Select method --</option>
+                <option>EFT / Bank Transfer</option>
+                <option>SnapScan / Zapper</option>
+                <option>Cash On Arrival</option>
+                <option>PayFast (Card / Instant EFT)</option>
+            </select>
+
+            <label for="pay-ref">Payment Reference / Proof</label>
+            <textarea id="pay-ref" name="reference" placeholder="Paste your payment reference or describe proof of payment..." required></textarea>
+
+            <button type="submit">Send Payment Notification</button>
+        </form>
+    </div>
+
+    <div class="note">
+        <p> ✦ <span>Important:</span> Your appointment is only confirmed once payment reflects or we confirm your payment notification. Please keep your proof of payment.</p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 <span>Sammy's Mobile Hair</span>. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
