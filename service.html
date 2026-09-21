@@ -171,7 +171,10 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.25em;
         }
-        .card button {
+        .book-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
             background: var(--plum);
             color: var(--gold-soft);
             border: 1px solid var(--gold);
@@ -184,7 +187,7 @@
             font-size: 0.78em;
             transition: all 0.3s;
         }
-        .card button:hover {
+        .book-btn:hover {
             background: var(--gold);
             color: var(--plum);
         }
@@ -218,6 +221,12 @@
             border-top: 2px solid var(--gold);
         }
         footer p span { color: var(--gold-soft); }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.9em; }
+            main > h2 { font-size: 1.9em; }
+            nav a { display: inline-block; margin: 6px 8px; font-size: 0.75em; }
+        }
     </style>
 </head>
 <body>
@@ -231,7 +240,7 @@
         <a href="service.html">Services</a>
         <a href="shop.html">Shop</a>
         <a href="contact.html">Book</a>
-        <a href="pay.html">Pay</a>
+        <a href="payment.html">Pay</a>
     </nav>
 </header>
 
@@ -250,7 +259,7 @@
                     <span class="duration">1 – 2 hours</span>
                     <span class="price">From R200</span>
                 </div>
-                <button onclick="window.location.href='contact.html'">Book Now</button>
+                <a href="contact.html" class="book-btn">Book Now</a>
             </div>
         </div>
 
@@ -263,7 +272,7 @@
                     <span class="duration">3 – 6 hours</span>
                     <span class="price">From R250</span>
                 </div>
-                <button onclick="window.location.href='contact.html'">Book Now</button>
+                <a href="contact.html" class="book-btn">Book Now</a>
             </div>
         </div>
 
@@ -276,7 +285,7 @@
                     <span class="duration">45 mins – 1½ hours</span>
                     <span class="price">From R180</span>
                 </div>
-                <button onclick="window.location.href='contact.html'">Book Now</button>
+                <a href="contact.html" class="book-btn">Book Now</a>
             </div>
         </div>
 
@@ -289,30 +298,50 @@
                     <span class="duration">2 – 4 hours</span>
                     <span class="price">From R350</span>
                 </div>
-                <button onclick="window.location.href='contact.html'">Book Now</button>
+                <a href="contact.html" class="book-btn">Book Now</a>
             </div>
         </div>
 
         <div class="card">
-            <img src="download (2).webp" alt="we also do frontal instulations">
+            <img src="download (2).webp" alt="Frontal installations service">
             <div class="card-content">
-                <h3>frontal instulations </h3>
-                <p>  a lovely instulationswith with no hasil        </p>
+                <h3>Frontal Installations</h3>
+                <p>A lovely frontal installation with a natural, seamless finish.</p>
                 <div class="meta">
-                    <span class="duration">1hr</span>
-                    <span class="price">from R150</span>
+                    <span class="duration">1 hour</span>
+                    <span class="price">From R150</span>
                 </div>
-                <button onclick="window.location.href='contact.html'">Book Now</button>
+                <a href="contact.html" class="book-btn">Book Now</a>
             </div>
         </div>
-  <div class="card">
+
+        <div class="card">
             <img src="OIP.webp" alt="Custom style from reference photo">
             <div class="card-content">
                 <h3>Custom Style (From Photo)</h3>
                 <p>Seen a look you love? Send Sammy the reference photo and she'll recreate it to suit your hair.</p>
                 <div class="meta">
                     <span class="duration">Varies by style</span>
-                    <span class="price">Quoted on request</span>
+                    <span class="price">Quote on request</span>
+                </div>
+                <a href="contact.html" class="book-btn">Book Now</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="note">
+        <h3>✦ Good To Know</h3>
+        <p>Please arrive with <span>clean, detangled hair</span> unless a wash service is included. A <span>deposit</span> may be required to secure longer appointments. Prices are a guide and may vary depending on hair length, density and style complexity.</p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 <span>Sammy's Mobile Hair</span>. All rights reserved.</p>
+</footer>
+
+</body>
+</html>ted on request</span>
                 </div>
                 <button onclick="window.location.href='contact.html'">Book Now</button>
             </div>
