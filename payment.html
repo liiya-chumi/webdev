@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Book your mobile hair appointment with Sammy's Mobile Hair. Tell Sammy your area, choose your style, and she'll come to you.">
-    <title>Book Now | Sammy's Mobile Hair</title>
+    <meta name="description" content="Pay for your Sammy's Mobile Hair appointment securely. EFT, SnapScan and cash accepted.">
+    <title>Payment | Sammy's Mobile Hair</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -45,6 +45,14 @@
             margin-top: 12px;
             font-weight: 700;
         }
+        header p {
+            color: #e8d9c5;
+            font-style: italic;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
         nav { margin-top: 10px; }
         nav a {
             color: #f3e5d1;
@@ -68,68 +76,75 @@
         nav a:hover::after { transform: scaleX(1); }
 
         main {
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 60px 25px;
         }
         main > h2 {
+            text-align: center;
             color: var(--plum);
             font-size: 2.4em;
-            text-align: center;
             margin-bottom: 10px;
             font-weight: 500;
         }
-        .intro {
+        .subtitle {
             text-align: center;
             color: #7a5a68;
             font-style: italic;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             letter-spacing: 1px;
         }
 
-        .details {
-            background: #fff;
-            padding: 30px 28px;
-            border-radius: 4px;
-            border: 1px solid #eadbc8;
-            border-top: 3px solid var(--gold);
-            box-shadow: 0 4px 18px rgba(42,15,28,0.06);
-            margin-bottom: 35px;
-        }
-        .details h3 {
-            color: var(--plum);
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            font-weight: 500;
-        }
-        .details p { margin-bottom: 8px; }
-        .details p strong { color: var(--plum-soft); letter-spacing: 1px; }
-        .details a { color: var(--gold); text-decoration: none; font-weight: 600; }
-        .details a:hover { text-decoration: underline; }
-
-        form {
+        .payment-box {
             background: #fff;
             padding: 35px 30px;
             border-radius: 4px;
             border: 1px solid #eadbc8;
+            border-top: 3px solid var(--gold);
             box-shadow: 0 4px 18px rgba(42,15,28,0.06);
+            margin-bottom: 30px;
         }
-        form h3 {
+        .payment-box h3 {
             color: var(--plum);
             font-size: 1.5em;
-            margin-bottom: 20px;
-            text-align: center;
+            margin-bottom: 18px;
             font-weight: 500;
             position: relative;
             padding-bottom: 14px;
         }
-        form h3::after {
+        .payment-box h3::after {
             content: "";
             position: absolute;
-            left: 30%; right: 30%; bottom: 0;
+            left: 0; right: 0; bottom: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            background: linear-gradient(90deg, var(--gold), transparent);
         }
+
+        .method {
+            background: #fdfaf5;
+            border: 1px solid #f0e2d0;
+            border-left: 3px solid var(--gold);
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            border-radius: 3px;
+        }
+        .method h4 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: var(--plum);
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .method p {
+            font-size: 0.92em;
+            color: #5a4650;
+            margin-bottom: 4px;
+        }
+        .method p strong {
+            color: var(--plum-soft);
+            letter-spacing: 0.5px;
+        }
+
         label {
             display: block;
             font-weight: 600;
@@ -157,7 +172,6 @@
             box-shadow: 0 0 0 3px rgba(201,162,39,0.15);
             background: #fff;
         }
-        textarea { resize: vertical; min-height: 110px; }
         button[type="submit"] {
             margin-top: 25px;
             background: var(--plum);
@@ -178,13 +192,17 @@
             letter-spacing: 4px;
         }
 
-        .hint {
-            font-size: 0.82em;
-            color: #7a5a68;
-            font-style: italic;
-            margin-top: 6px;
-            letter-spacing: 0.5px;
+        .note {
+            max-width: 720px;
+            margin: 35px auto 0;
+            text-align: center;
+            padding: 25px 25px;
+            background: linear-gradient(135deg, #fdf6ec, #f7e7ef);
+            border: 1px solid var(--gold);
+            border-radius: 4px;
         }
+        .note p { color: #5a4650; font-size: 0.95em; }
+        .note p span { color: var(--plum-soft); font-weight: 600; }
 
         footer {
             background: linear-gradient(180deg, #2a0f1c, #1c0913);
@@ -201,7 +219,8 @@
         @media (max-width: 600px) {
             header h1 { font-size: 1.9em; }
             main > h2 { font-size: 1.9em; }
-            form { padding: 25px 20px; }
+            .payment-box { padding: 25px 20px; }
+            nav a { display: inline-block; margin: 6px 8px; font-size: 0.75em; }
         }
     </style>
 </head>
@@ -209,62 +228,83 @@
 
 <header>
     <img src="Screenshot 2026-09-15 091352.png" alt="Sammy's Mobile Hair Logo">
-    <h1>Sammy's Mobile Hair</h1>
+    <h1>Payment</h1>
+    <p>Secure · Simple · Convenient</p>
     <nav>
-           <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="service.html">Services</a>
-        <a href="shop.html">shop</a>
+        <a href="shop.html">Shop</a>
         <a href="contact.html">Book</a>
-             <a href="payment.html">pay</a>
-        
+        <a href="payment.html">Pay</a>
     </nav>
 </header>
 
 <main>
-    <h2>Book Your Appointment</h2>
-    <p class="intro">Tell Sammy where and when — she'll bring the salon to you.</p>
+    <h2>Make A Payment</h2>
+    <p class="subtitle">Pay for your appointment or shop order below.</p>
 
-    <div class="details">
-        <h3>Contact Details</h3>
-        <p><strong>Phone:</strong> <a href="tel:+27681602489">068 160 2489</a></p>
-        <p><strong>Email:</strong> <a href="mailto:samanthamahlangeni@gmail.com">samanthamahlangeni@gmail.com</a></p>
-        <p><strong>Service Area:</strong> Mobile — Sammy comes to you</p>
+    <div class="payment-box">
+        <h3>Payment Methods</h3>
+
+        <div class="method">
+            <h4>✦EFT / Bank Transfer</h4>
+            <p><strong>Bank:</strong> FNB</p>
+            <p><strong>Account Name:</strong> S. Mahlangeni</p>
+            <p><strong>Account Number:</strong> 630 123 4567</p>
+            <p><strong>Branch Code:</strong> 250655</p>
+            <p><strong>Reference:</strong> Your full name + appointment date</p>
+        </div>
+
+        <div class="method">
+            <h4>✦ SnapScan / Zapper</h4>
+            <p>Scan the QR code Sammy sends you after booking, or request a payment link via WhatsApp.</p>
+        </div>
+
+        <div class="method">
+            <h4>✦ Cash On Arrival</h4>
+            <p>Cash is accepted on the day of your appointment. Please have the exact amount ready.</p>
+        </div>
+
+        <div class="method">
+            <h4>✦ PayFast (Card / Instant EFT)</h4>
+            <p>Request a secure PayFast link by email or WhatsApp and pay with your card or instant EFT.</p>
+        </div>
     </div>
 
-    <form action="mailto:samanthamahlangeni@gmail.com" method="post" enctype="text/plain">
-        <h3>Appointment Request</h3>
+    <div class="payment-box">
+        <h3>Notify Sammy Of Your Payment</h3>
+        <form action="mailto:samanthamahlangeni@gmail.com" method="post" enctype="text/plain">
+            <label for="pay-name">Full Name</label>
+            <input type="text" id="pay-name" name="name" placeholder="Your full name" required>
 
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
+            <label for="pay-email">Email</label>
+            <input type="email" id="pay-email" name="email" placeholder="you@example.com" required>
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="000 000 0000" required autocomplete="tel">
+            <label for="pay-phone">Phone Number</label>
+            <input type="tel" id="pay-phone" name="phone" placeholder="000 000 0000" required>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+            <label for="pay-amount">Amount Paid (R)</label>
+            <input type="number" id="pay-amount" name="amount" placeholder="e.g. 250" min="0" step="10" required>
 
-        <label for="service">Choose a Service</label>
-        <select id="service" name="service" required>
-            <option value="">-- Select a service --</option>
-            <option>Hair Styling</option>
-            <option>Braiding</option>
-            <option>Hair Treatment</option>
-            <option>Special Occasion Styling</option>
-            <option>Custom Style (from reference photo)</option>
-        </select>
+            <label for="pay-method">Payment Method Used</label>
+            <select id="pay-method" name="method" required>
+                <option value="">-- Select method --</option>
+                <option>EFT / Bank Transfer</option>
+                <option>SnapScan / Zapper</option>
+                <option>Cash On Arrival</option>
+                <option>PayFast (Card / Instant EFT)</option>
+            </select>
 
-        <label for="area">Area / Suburb Where Hair Will Be Done</label>
-        <input type="text" id="area" name="area" placeholder="e.g. Sandton, Soweto, Pretoria East" required>
-        <p class="hint">Please tell Sammy the exact area where your hair will be done.</p>
+            <label for="pay-ref">Payment Reference / Proof</label>
+            <textarea id="pay-ref" name="reference" placeholder="Paste your payment reference or describe proof of payment..." required></textarea>
 
-        <label for="date">Preferred Date</label>
-        <input type="date" id="date" name="date" required>
+            <button type="submit">Send Payment Notification</button>
+        </form>
+    </div>
 
-        <label for="message">Message / Style Details</label>
-        <textarea id="message" name="message" placeholder="Describe the style you'd like, or mention that you'll send a reference photo..."></textarea>
-
-        <button type="submit">Send Booking Request</button>
-    </form>
+    <div class="note">
+        <p>✦ <span>Important:</span> Your appointment is only confirmed once payment reflects or Sammy confirms your payment notification. Please keep your proof of payment.</p>
+    </div>
 </main>
 
 <footer>
