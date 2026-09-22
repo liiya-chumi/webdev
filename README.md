@@ -49,15 +49,23 @@ Google Map Embed: An interactive Google Map was added to the Contact page so cus
 Big Call-to-Action Buttons: Added large, easy-to-tap buttons on the home page ("View Our Menu", "Find Our Location") to guide customers to the next step.
 
 
-Clickable Phone Links: Phone numbers are now clickable (<a href="tel:...">). If a customer views your site on a cellphone, they can tap the number to call you instantly.Website Development Brief  
-Business: EMIHLE’S MOBILE HAIR 
+Clickable Phone Links: Phone numbers are now clickable (<a href="tel:...">). If a customer views your site on a cellphone, they can tap the number to call you instantly.
+
+Website Development Brief 
+
+Business: EMIHLE’S MOBILE HAIR
+
 Designer: Liyabona Mahlangu at WEB CREATORS PTY LTD 
+
 Purpose: The website is designed to strengthen the brand, increase awareness, attract new 
 customers, showcase previous hairstyling work, and allow clients to book appointments. 
+
 Main business challenge: EMIHLE’S MOBILE HAIR has difficulty attracting customers and 
 managing availability and scheduling. 
+
 Website focus: The primary focus is the mobile hair business, making it easier for customers 
 to view services, check availability, and book appointments. 
+
 Design approach: The website was developed based on discussions with the client and survey 
 responses, with the aim of matching the business's brand identity and improving customer 
 engagement. 
