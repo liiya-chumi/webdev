@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pay for your Sammy's Mobile Hair appointment securely.">
+    <title>Payment | Sammy's Mobile Hair</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="Screenshot 2026-09-15 091352.png" alt="Sammy's Mobile Hair Logo">
+    <h1>Payment</h1>
+    <p>Secure · Simple · Convenient</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Book</a>
+        <a href="payment.html">Pay</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Make A Payment</h2>
+    <p class="subtitle">Pay for your appointment or shop order below.</p>
+
+    <div class="payment-box">
+        <h3>Payment Methods</h3>
+        <div class="method">
+            <h4>✦EFT / Bank Transfer</h4>
+            <p><strong>Bank:</strong> FNB</p>
+            <p><strong>Account Name:</strong> S. Mahlangeni</p>
+            <p><strong>Account Number:</strong> 630 123 4567</p>
+            <p><strong>Branch Code:</strong> 250655</p>
+            <p><strong>Reference:</strong> Your full name + appointment date</p>
+        </div>
+        <div class="method">
+            <h4>✦ SnapScan / Zapper</h4>
+            <p>Scan the QR code Sammy sends you after booking.</p>
+        </div>
+        <div class="method">
+            <h4>✦ Cash On Arrival</h4>
+            <p>Cash is accepted on the day of your appointment.</p>
+        </div>
+    </div>
+
+    <div class="payment-box">
+        <h3>Notify Sammy Of Your Payment</h3>
+        <form action="mailto:samanthamahlangeni@gmail.com" method="post" enctype="text/plain">
+            <label for="pay-name">Full Name</label>
+            <input type="text" id="pay-name" name="name" placeholder="Your full name" required>
+
+            <label for="pay-email">Email</label>
+            <input type="email" id="pay-email" name="email" placeholder="you@example.com" required>
+
+            <label for="pay-phone">Phone Number</label>
+            <input type="tel" id="pay-phone" name="phone" placeholder="000 000 0000" required>
+
+            <label for="pay-amount">Amount Paid (R)</label>
+            <input type="number" id="pay-amount" name="amount" placeholder="e.g. 250" min="0" step="10" required>
+
+            <label for="pay-method">Payment Method Used</label>
+            <select id="pay-method" name="method" required>
+                <option value="">-- Select method --</option>
+                <option>EFT / Bank Transfer</option>
+                <option>SnapScan / Zapper</option>
+                <option>Cash On Arrival</option>
+                <option>PayFast (Card / Instant EFT)</option>
+            </select>
+
+            <label for="pay-ref">Payment Reference / Proof</label>
+            <textarea id="pay-ref" name="reference" placeholder="Paste your payment reference..." required></textarea>
+
+            <button type="submit">Send Payment Notification</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 <span>Sammy's Mobile Hair</span>. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

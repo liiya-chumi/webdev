@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your mobile hair appointment with Sammy's Mobile Hair.">
+    <title>Book Now | Sammy's Mobile Hair</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <img src="Screenshot 2026-09-15 091352.png" alt="Sammy's Mobile Hair Logo">
+    <h1>Sammy's Mobile Hair</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Book</a>
+        <a href="payment.html">Pay</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Book Your Appointment</h2>
+    <p class="subtitle">Tell Sammy where and when — she'll bring the salon to you.</p>
+
+    <div class="details">
+        <h3>Contact Details</h3>
+        <p><strong>Phone:</strong> <a href="tel:+27681602489">068 160 2489</a></p>
+        <p><strong>Email:</strong> <a href="mailto:samanthamahlangeni@gmail.com">samanthamahlangeni@gmail.com</a></p>
+        <p><strong>Service Area:</strong> Mobile — Sammy comes to you</p>
+    </div>
+
+    <!-- Form updated with JS validation logic -->
+    <form action="mailto:samanthamahlangeni@gmail.com" method="post" enctype="text/plain">
+        <h3>Appointment Request</h3>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="000 000 0000" required autocomplete="tel">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+
+        <label for="service">Choose a Service</label>
+        <select id="service" name="service" required>
+            <option value="">-- Select a service --</option>
+            <option>Hair Styling</option>
+            <option>Braiding</option>
+            <option>Hair Treatment</option>
+            <option>Special Occasion Styling</option>
+            <option>Custom Style (from reference photo)</option>
+        </select>
+
+        <label for="area">Area / Suburb Where Hair Will Be Done</label>
+        <input type="text" id="area" name="area" placeholder="e.g. Sandton, Soweto, Pretoria East" required>
+
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="message">Message / Style Details</label>
+        <textarea id="message" name="message" placeholder="Describe the style you'd like..."></textarea>
+
+        <button type="submit">Send Booking Request</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2026 <span>Sammy's Mobile Hair</span>. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
